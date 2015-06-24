@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM giantmonkey/debian:wheezy-amd64
 ENV DEBIAN_FRONTEND noninteractive
 
 ADD mariadb.list /etc/apt/sources.list.d/
