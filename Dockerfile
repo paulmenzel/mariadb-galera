@@ -1,7 +1,7 @@
 FROM giantmonkey/debian:jessie-amd64
 ENV DEBIAN_FRONTEND noninteractive
 
-ADD mariadb.list /etc/apt/sources.list.d/
+COPY mariadb.list /etc/apt/sources.list.d/
 RUN chown root: /etc/apt/sources.list.d/mariadb.list
 RUN adduser --uid 200 --disabled-password --gecos "MySQL Server" --home /var/lib/mysql --shell /bin/false mysql
 RUN apt-get update &&  \
@@ -11,6 +11,7 @@ RUN apt-get update &&  \
 
 COPY my.cnf /etc/mysql/my.cnf
 COPY mysqld.sh /mysqld.sh
+
 
 RUN chmod 555 /mysqld.sh
 
