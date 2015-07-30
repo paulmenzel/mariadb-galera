@@ -1,5 +1,6 @@
 FROM giantmonkey/debian:jessie-amd64
 ENV DEBIAN_FRONTEND noninteractive
+ENV TERM xterm
 
 COPY mariadb.list /etc/apt/sources.list.d/
 RUN chown root: /etc/apt/sources.list.d/mariadb.list
