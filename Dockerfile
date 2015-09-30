@@ -5,8 +5,7 @@ ENV TERM xterm
 COPY mariadb.list /etc/apt/sources.list.d/
 RUN chown root: /etc/apt/sources.list.d/mariadb.list
 RUN adduser --uid 200 --disabled-password --gecos "MySQL Server" --home /var/lib/mysql --shell /bin/false mysql
-RUN apt-get update &&  \
-    apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db && \
+RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db && \
     apt-get update && \
     apt-get install -y mariadb-galera-server galera
 
