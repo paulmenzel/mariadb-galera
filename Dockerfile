@@ -19,4 +19,4 @@ RUN chmod 555 /mysqld.sh
 VOLUME ["/var/lib/mysql"]
 
 # Define default command.
-CMD ["/mysqld.sh"]
+ENTRYPOINT ["/mysqld.sh"]
